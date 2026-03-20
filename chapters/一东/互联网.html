@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永乐小典 · 互联网</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Noto Serif SC", "SimSun", "STSong", serif;
+            background: linear-gradient(135deg, #f5f0e8 0%, #e8e0d0 100%);
+            color: #2c2c2c;
+            line-height: 1.8;
+            padding: 40px;
+            max-width: 210mm;
+            margin: 0 auto;
+            min-height: 297mm;
+        }
+        
+        /* 古籍纸张纹理效果 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* 边框装饰 */
+        .page-border {
+            border: 3px double #8B0000;
+            padding: 30px;
+            position: relative;
+            min-height: 257mm;
+        }
+        
+        .page-border::before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid #8B0000;
+            pointer-events: none;
+        }
+        
+        /* 主标题 */
+        .main-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: 8px;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 15px;
+        }
+        
+        /* 章节标题 */
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2F4F4F;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #8B0000;
+        }
+        
+        /* 小标题 */
+        .sub-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #4A4A4A;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* 段落 */
+        p {
+            text-align: justify;
+            text-indent: 2em;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        /* 高亮文本 */
+        .highlight {
+            color: #8B0000;
+            font-weight: 600;
+            text-indent: 0;
+            margin: 15px 0;
+        }
+        
+        /* 列表 */
+        .content-list {
+            margin-left: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .content-list li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        /* 分隔线 */
+        .divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #8B0000;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .footer p {
+            text-indent: 0;
+            margin-bottom: 5px;
+        }
+        
+        /* 打印优化 */
+        @media print {
+            body {
+                background: #f5f0e8;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-border">
+        <h1 class="main-title">互联网 【一东】</h1><hr class="divider"><h2 class="section-title">释义</h2><p>**互联网**（Internet），又称**因特网**、**网际网路**，乃全球计算机互联之网络也。以 TCP/IP 协议为纲，将世界各地之计算机网络互相连接，使信息得以瞬息传遍寰宇。</p><p>其要义有三：</p><ul class="content-list"><li>**互联** — 万机相连，不分畛域</li><li>**共享** — 信息互通，资源共用</li><li>**开放** — 协议公开，人人可接</li></ul><hr class="divider"><h2 class="section-title">出处</h2><p>**首见文献**：</p><ul class="content-list"><li>1974年，文顿·瑟夫（Vinton Cerf）、罗伯特·卡恩（Robert Kahn）撰《A Protocol for Packet Network Intercommunication》，载于《IEEE Transactions on Communications》，TCP/IP 协议之源起也。</li></ul><p>**标准确立**：</p><ul class="content-list"><li>1982年，美国国防部采用 TCP/IP 为军用标准</li><li>1983年1月1日，ARPANET 正式切换至 TCP/IP，此日乃互联网诞生之纪元</li></ul><p>**命名由来**：</p><ul class="content-list"><li>1986年，美国联邦网络委员会（FNC）界定 "Internet" 一词，指以 IP 协议互联之网络</li><li>1994年，中国科学技术名词审定委员会定名「因特网」，然民间多用「互联网」</li></ul><hr class="divider"><h2 class="section-title">演变</h2><p>**草创期**（1969–1990）</p><ul class="content-list"><li>1969年，ARPANET 始建于美国，连接四所大学，乃互联网之雏形</li><li>1971年，雷·汤姆林森发明电子邮件（@ 符号之始祖）</li><li>1989年，蒂姆·伯纳斯-李于欧洲核子研究中心（CERN）提出万维网（World Wide Web）构想</li></ul><p>**勃兴期**（1990–2000）</p><ul class="content-list"><li>1991年，首个网站 info.cern.ch 上线，万维网问世</li><li>1993年，马克·安德森开发 Mosaic 浏览器，图形界面使网民激增</li><li>1994年，雅虎（Yahoo!）成立，门户网站时代开启</li><li>1998年，谷歌（Google）创立，搜索引擎革新信息检索</li><li>1999年，阿里巴巴、腾讯相继成立，中国互联网崛起</li></ul><p>**普及期**（2000–2010）</p><ul class="content-list"><li>2001年，维基百科上线，众包知识之典范</li><li>2003年，WordPress 发布，博客文化盛行</li><li>2004年，Facebook 创立，社交网络时代来临</li><li>2006年，Twitter 问世，微博客风靡</li><li>2007年，iPhone 发布，移动互联网萌芽</li><li>2008年，App Store 上线，移动应用生态形成</li></ul><p>**移动时代**（2010–2020）</p><ul class="content-list"><li>2010年，Instagram 创立，图片社交兴起</li><li>2011年，微信发布，中国移动互联网霸主地位确立</li><li>2012年，今日头条上线，算法推荐颠覆信息分发</li><li>2016年，抖音（TikTok）问世，短视频席卷全球</li><li>2019年，5G 商用启动，万物互联时代开启</li></ul><p>**智能时代**（2020–至今）</p><ul class="content-list"><li>2020年，新冠疫情催生远程办公、在线教育爆发</li><li>2022年，ChatGPT 问世，生成式 AI 融入互联网</li><li>2023年，大模型竞赛白热化，AI 原生应用涌现</li><li>2025年，多模态 AI、具身智能成为新热点</li></ul><hr class="divider"><h2 class="section-title">关联</h2><ul class="content-list"><li>**人工智能** 【一东】→ 见本典「人工智能」条</li><li>**物联网** 【一东】→ 万物互联之延伸</li><li>**区块链** 【七灰】→ 去中心化之网络</li><li>**云计算** 【四御】→ 互联网基础设施之上层</li><li>**大数据** 【四御】→ 互联网产生之巨量信息</li><li>**网络安全** 【九寒】→ 互联网之防护</li></ul><hr class="divider"><p>*解缙奉敕编纂*</p><p>*永乐小典编修局*</p>
+        
+        <div class="footer">
+            <p>永乐小典 · 一东 · 互联网</p>
+            <p>解缙奉敕编纂 · 公元二〇〇〇年后之新学</p>
+        </div>
+    </div>
+</body>
+</html>
