@@ -29,9 +29,9 @@ def get_font(size, style='regular'):
 def create_vertical_directory(output_file):
     """創建豎版目錄影印本"""
     
-    # 更大尺寸以容納更多列
-    width = 3600
-    height = 2400
+    # 更大尺寸以容納更多列和完整韻目
+    width = 4000
+    height = 3200
     
     # 創建圖片
     img = Image.new('RGB', (width, height), color='#E8E0D0')
@@ -51,11 +51,11 @@ def create_vertical_directory(output_file):
     section_font = get_font(36, 'title')
     body_font = get_font(28, 'regular')
     small_font = get_font(24, 'regular')
-    footer_font = get_font(22, 'regular')
+    footer_font = get_font(28, 'regular')
     
     # 邊距
-    margin_x = 140
-    margin_y = 120
+    margin_x = 160
+    margin_y = 150
     
     # 列寬和間距
     col_width = 45
