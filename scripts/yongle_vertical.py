@@ -9,18 +9,26 @@ from PIL import Image, ImageDraw, ImageFont
 import sys
 import os
 
-def get_font(size):
-    """获取中文字体"""
-    font_paths = [
-        '/usr/share/fonts/google-noto-cjk/NotoSansCJK-Regular.ttc',
-        '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',
-        '/usr/share/fonts/truetype/wqy/wqy-microhei.ttc',
-        '/System/Library/Fonts/PingFang.ttc',
-        '/System/Library/Fonts/STHeiti Light.ttc',
-        '/mnt/c/Windows/Fonts/simhei.ttf',
-        '/mnt/c/Windows/Fonts/simsun.ttc',
-        '/mnt/c/Windows/Fonts/simkai.ttf',
-    ]
+def get_font(size, style='serif'):
+    """获取中文字体 - 使用宋体(Serif)模拟古籍风格"""
+    if style == 'title':
+        # 标题用粗体宋体
+        font_paths = [
+            '/usr/share/fonts/google-noto-cjk/NotoSerifCJK-Bold.ttc',
+            '/usr/share/fonts/google-noto-cjk/NotoSerifCJK-Regular.ttc',
+        ]
+    elif style == 'body':
+        # 正文用常规宋体
+        font_paths = [
+            '/usr/share/fonts/google-noto-cjk/NotoSerifCJK-Regular.ttc',
+            '/usr/share/fonts/google-noto-cjk/NotoSerifCJK-Light.ttc',
+        ]
+    else:
+        font_paths = [
+            '/usr/share/fonts/google-noto-cjk/NotoSerifCJK-Regular.ttc',
+            '/usr/share/fonts/google-noto-cjk/NotoSansCJK-Regular.ttc',
+            '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',
+        ]
     
     for font_path in font_paths:
         if os.path.exists(font_path):
@@ -103,12 +111,12 @@ def create_yongle_vertical_image(input_file, output_file):
     img = Image.new('RGB', (width, height), color='#F5F0E1')
     draw = ImageDraw.Draw(img)
     
-    # 加载字体
-    title_font = get_font(42)
-    subtitle_font = get_font(28)
-    section_font = get_font(24)
-    body_font = get_font(20)
-    small_font = get_font(16)
+    # 加载字体 - 使用宋体模拟古籍
+    title_font = get_font(48, 'title')      # 标题大字
+    subtitle_font = get_font(28, 'body')
+    section_font = get_font(26, 'title')    # 章节标题稍粗
+    body_font = get_font(22, 'body')        # 正文宋体
+    small_font = get_font(16, 'body')
     
     # 边距
     margin_x = 100
